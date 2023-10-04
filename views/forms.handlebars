@@ -1,0 +1,163 @@
+<style>
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body
+{
+    background-color: rgb(81, 72, 62);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+
+#all
+{
+    background-color: aqua;
+    width: 45vw;
+    height: 95vh;
+    margin-top: 1.3%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#img
+{
+    height: 40%;
+    width: 250px;
+    background-color: rgb(228, 200, 200);
+}
+
+form
+{
+    height: 50%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+form div
+{
+    height: 86%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+}
+
+label
+{
+    color: black;
+    font-family: sans-serif;
+    font-size: max(1.5vw, 20px);
+}
+
+
+textarea
+{
+    width: 100%;
+    height: 70%;
+    font-family: sans-serif;
+    font-size: max(1.3vw, 17px);
+    resize: none;
+}
+
+#id_do_comentário
+{
+    display: none;
+}
+
+#send
+{
+    width: 70%;
+    height: 14%;
+    border-radius: 50px;
+    margin: auto;
+    font-size: max(1.3vw, 17px);
+}
+
+
+
+
+@media(max-width: 800px)
+{
+    #all
+    {
+        width: 80%;
+        height: 100vh;
+        margin-top: 0;
+    }
+
+    #img
+    {
+        width: auto;
+    }
+}
+
+@media(max-width: 500px)
+{
+    #all
+    {
+        width: 100%;
+        height: 100vh;
+    }
+}
+</style>
+
+
+
+
+<div id="all">
+    <img id="img" src="" alt="">
+    <form action="/form" method="POST" id="comment_form">
+        <div>
+            <label for="body">Seu comentário:</label>
+            <textarea name="body" id="body" placeholder="Digite sua mensagem" required></textarea>
+            <input id="id_do_comentário" name="id_do_comentário" readonly></input>
+        </div>
+        <input id="send" onclick="redirecionar()" type="submit" value="Enviar">
+    </form>
+</div>
+
+
+
+
+
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const ids = urlParams.get('id');
+
+    const id_do_comentário = document.getElementById('id_do_comentário')
+    id_do_comentário.value = ids
+
+    console.log(ids);
+
+    const img = document.getElementById('img');
+    fetch('http://localhost:3000/bd')
+    .then(res=>res.json())
+    .then((json) =>
+    {
+        img.setAttribute('src', `${json[ids].image}`)
+    })
+
+    {{!-- img.setAttribute('src', '') --}}
+
+    function redirecionar()
+    {
+        setTimeout((() =>
+        {
+            {{!-- COLOCAR O LINK DA HOME DEPOIS --}}
+            window.location = 'http://localhost:3000/form'
+        }), 150)
+    }
+
+</script>
