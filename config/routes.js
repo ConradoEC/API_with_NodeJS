@@ -42,13 +42,16 @@ routes.post('/form', (req, res) =>
 {
   const commentBody = req.body.body
   const commentId = req.body.id_do_comentário
+  const userName = req.body.nome_do_usuario
+  const userLastName = req.body.sobrenome_do_usuario
+  const userId = req.body.id_do_usuario
   // res.send(req.body.body + req.body.id_do_comentário)
   const data = new Date()
   const day = String(data.getDate()).padStart(2,'0')
   const month = String(data.getMonth() + 1).padStart(2,'0')
   const year = data.getFullYear()
   const dataAtual = `${year}-${month}-${day}`
-  comments_connection.query(`INSERT INTO comments(comment_id, comment_name, comment_text, comment_date) VALUES (${commentId}, "Erick  Conrado", ${JSON.stringify(commentBody)}, "${dataAtual}")`)
+  comments_connection.query(`INSERT INTO comments(comment_id, comment_name, comment_text, comment_date) VALUES (${commentId}, "${userName} ${userLastName}", ${JSON.stringify(commentBody)}, "${dataAtual}")`)
 })
 
 routes.post('/vaccine', (req, res) =>

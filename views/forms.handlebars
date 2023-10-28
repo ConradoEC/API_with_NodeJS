@@ -75,6 +75,21 @@ textarea
     display: none;
 }
 
+#nome_do_usuario
+{
+    display: none;
+}
+
+#sobrenome_do_usuario
+{
+    display: none;
+}
+
+#id_do_usuario
+{
+    display: none;
+}
+
 #send
 {
     width: 70%;
@@ -122,6 +137,9 @@ textarea
             <label for="body">Seu comentário:</label>
             <textarea name="body" id="body" placeholder="Digite sua mensagem" required></textarea>
             <input id="id_do_comentário" name="id_do_comentário" readonly></input>
+            <input id="nome_do_usuario" name="nome_do_usuario" readonly></input>
+            <input id="sobrenome_do_usuario" name="sobrenome_do_usuario" readonly></input>
+            <input id="id_do_usuario" name="id_do_usuario" readonly></input>
         </div>
         <input id="send" onclick="redirecionar()" type="submit" value="Enviar">
     </form>
@@ -134,12 +152,20 @@ textarea
 
 <script>
     const urlParams = new URLSearchParams(window.location.search);
-    const ids = urlParams.get('id');
+    const ids = urlParams.get('id_image');
+    const id_usuario = urlParams.get('id_usuario');
+    const nome_usuario = urlParams.get('nome_usuario');
+    const sobrenome_usuario = urlParams.get('sobrenome_usuario');
 
     const id_do_comentário = document.getElementById('id_do_comentário')
+    const nome_do_usuario = document.getElementById('nome_do_usuario')
+    const sobrenome_do_usuario = document.getElementById('sobrenome_do_usuario')
+    const id_do_usuario = document.getElementById('id_do_usuario')
+    
     id_do_comentário.value = ids
-
-    console.log(ids);
+    nome_do_usuario.value = nome_usuario
+    sobrenome_do_usuario.value = sobrenome_usuario
+    id_do_usuario.value = id_usuario
 
     const img = document.getElementById('img');
     fetch('https://node-api-0bwb.onrender.com/bd')
