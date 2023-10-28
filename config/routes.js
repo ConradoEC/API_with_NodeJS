@@ -51,7 +51,7 @@ routes.post('/form', (req, res) =>
   const month = String(data.getMonth() + 1).padStart(2,'0')
   const year = data.getFullYear()
   const dataAtual = `${year}-${month}-${day}`
-  comments_connection.query(`INSERT INTO comments(comment_id, comment_name, comment_text, comment_date) VALUES (${commentId}, "${userName} ${userLastName}", ${JSON.stringify(commentBody)}, "${dataAtual}")`)
+  comments_connection.query(`INSERT INTO comments(comment_id, comment_name, comment_text, comment_date, id_user) VALUES (${commentId}, "${userName} ${userLastName}", ${JSON.stringify(commentBody)}, "${dataAtual}", ${userId})`)
 })
 
 routes.post('/vaccine', (req, res) =>
