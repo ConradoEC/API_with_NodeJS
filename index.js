@@ -16,16 +16,16 @@ app.set('view engine', 'handlebars')
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.json())
-// app.use(cors())
+app.use(cors())
 app.use(routes)
 
-app.use((req, res, next) => 
-{
-  // console.log('ola')
-  app.use(cors());
-  res.header("Access-Control-Allow-Origin", "https://conradoec.github.io");
-  next();
-});
+// app.use((req, res, next) => 
+// {
+//   // console.log('ola')
+//   app.use(cors());
+//   res.header("Access-Control-Allow-Origin", "https://conradoec.github.io");
+//   next();
+// });
 
 app.listen(process.env.PORT ? Number(process.env.PORT) : PORT, () => 
 {
