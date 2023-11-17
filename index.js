@@ -23,7 +23,7 @@ app.use((req, res, next) =>
 {
   // console.log('ola')
   app.use(cors());
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Origin", "https://conradoec.github.io");
   next();
 });
 
