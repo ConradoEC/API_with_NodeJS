@@ -21,9 +21,10 @@ app.use(routes)
 
 app.use((req, res, next) => 
 {
-  app.use(cors());
-  res.header("Access-Control-Allow-Origin", '*');
-  next();
+  console.log('ola')
+  // app.use(cors());
+  // res.header("Access-Control-Allow-Origin", "*");
+  // next();
 });
 
 app.listen(process.env.PORT ? Number(process.env.PORT) : PORT, () => 
