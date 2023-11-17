@@ -16,19 +16,17 @@ app.set('view engine', 'handlebars')
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.json())
-app.use(cors({
-  origin: "https://conradoec.github.io",
-}))
+// app.use(cors())
 app.use(routes)
+
+app.use((req, res, next) => 
+{
+  app.use(cors());
+  res.header("Access-Control-Allow-Origin", '*');
+  next();
+});
 
 app.listen(process.env.PORT ? Number(process.env.PORT) : PORT, () => 
 {
   console.log('Express started at http://localhost:3000')
 })
-
-// app.use((req, res, next) => 
-// {
-//   res.header("Access-Control-Allow-Origin", '*');
-//   app.use(cors());
-//   next();
-// });
