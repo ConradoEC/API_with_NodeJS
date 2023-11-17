@@ -17,7 +17,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors({
-  origin: "*",
+  origin: "https://conradoec.github.io/Trabalho_do_Inter/Vacinacao/",
 }))
 app.use(routes)
 
