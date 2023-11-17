@@ -16,7 +16,9 @@ app.set('view engine', 'handlebars')
 app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  "Access-Control-Allow-Origin": "https://conradoec.github.io/"
+}))
 app.use(routes)
 
 // app.use((req, res, next) => 
