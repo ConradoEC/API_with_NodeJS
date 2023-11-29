@@ -2,7 +2,7 @@
 const mysql = require('mysql2')
 
 const comments_connection = mysql.createConnection({
-    host: 'https://www.phpmyadmin.co',
+    host: '52.8.112.233',
     user: 'sql10665993',
     password: 'gyD43pWnva',
     database: 'sql10665993'
