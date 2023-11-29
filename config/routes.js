@@ -34,8 +34,8 @@ routes.get('/vaccine', (req, res) =>
     dbvaccine.query('SELECT * FROM vaccines', (err, result) =>
     {
         return res.json(result);
+        console.log(result);
     })
-    console.log(result);
     console.log('deu certo')
 })
 
