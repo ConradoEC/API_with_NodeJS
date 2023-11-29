@@ -35,6 +35,7 @@ routes.get('/vaccine', (req, res) =>
     {
         return res.json(result);
     })
+    console.log(result);
     console.log('deu certo')
 })
 
