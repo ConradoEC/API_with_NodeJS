@@ -12,7 +12,7 @@ routes.get('/bd', (req, res) =>
 {
     connection.query('SELECT * FROM informations', (err, result) => 
     {
-        res.send(result);
+        return res.json(result);
     })
 })
 
@@ -33,8 +33,7 @@ routes.get('/vaccine', (req, res) =>
 {
     dbvaccine.query('SELECT * FROM vaccines', (err, result) =>
     {
-        // return res.json(result);
-        res.send(result);
+        return res.json(result);
     })
     console.log('deu certo')
 })
