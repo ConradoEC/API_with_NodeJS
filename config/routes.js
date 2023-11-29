@@ -1,9 +1,9 @@
 const express = require('express')
 const routes = express.Router()
 const mysql =  require('mysql2')
-const connection = require('./BD_access/dbConnection')
-const comments_connection = require('./BD_access/comments')
-const dbvaccine = require('./BD_access/dbvaccine')
+const connection = require('./BD_access/dbConnection.js')
+const comments_connection = require('./BD_access/comments.js')
+const dbvaccine = require('./BD_access/dbvaccine.js')
 
 
 
