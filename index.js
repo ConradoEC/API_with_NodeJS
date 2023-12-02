@@ -17,7 +17,7 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors({
-  "Access-Control-Allow-Origin": "https://conradoec.github.io/"
+  "Access-Control-Allow-Origin": "*"
 }))
 app.use(routes)
 
