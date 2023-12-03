@@ -12,7 +12,7 @@ routes.get('/bd', (req, res) =>
 {
     connection.query('SELECT * FROM informations', (err, result) => 
     {
-        return res.send(result);
+        return res.json(result);
     })
 })
 
