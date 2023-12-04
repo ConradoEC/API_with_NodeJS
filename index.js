@@ -17,7 +17,8 @@ app.use(morgan('dev'))
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(express.json())
 app.use(cors({
-  "Access-Control-Allow-Origin": "*"
+  "Access-Control-Allow-Origin": "*",
+  "Content-type": "application/json"
 }))
 app.use(routes)
 
