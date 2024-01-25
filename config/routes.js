@@ -35,7 +35,6 @@ routes.get('/vaccine', (req, res) =>
     {
         return res.json(result);
     })
-    console.log('deu certo')
 })
 
 routes.post('/form', (req, res) =>
