@@ -1,19 +1,28 @@
 const express = require('express')
 const routes = express.Router()
 const mysql =  require('mysql2')
-const connection = require('./BD_access/dbConnection.js')
+// const connection = require('./BD_access/dbConnection.js')
 const comments_connection = require('./BD_access/comments.js')
 const dbvaccine = require('./BD_access/dbvaccine.js')
-
-
+const {sequelize} = require('./BD_access/dbConnection.js')
+const {informations} = require('./BD_access/dbConnection.js')
 
 
 routes.get('/bd', (req, res) =>
 {
-    connection.query('SELECT * FROM informations', (err, result) => 
-    {
-        res.send(result);
-    })
+    (async () => {
+
+        await sequelize.sync();
+
+        const produtos = await informations.findAll();
+        res.send(produtos);
+    })()
+
+    
+    // connection.query('SELECT * FROM informations', (err, result) => 
+    // {
+    //     res.send(result);
+    // })
 })
 
 routes.get('/form', (req, res) =>
