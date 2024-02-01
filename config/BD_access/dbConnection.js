@@ -312,19 +312,19 @@ const informations = sequelize.define('informations2', {
 //     nIndItem5: '',
 // })
 
-const updateInformations = informations.update({
-    title: 'Estatinas',
-    image: 'https://i.im.ge/2023/11/30/CPuyUT.3-MB-Editors-Picks-24-02-2022-1-Statin-Pill-iStock-1221184048-removebg-preview.png',
-    summary: 'As estatinas são medicamentos utilizados principalmente para reduzir os níveis de colesterol no sangue. Elas atuam inibindo uma enzima chamada HMG-CoA redutase, que é responsável pela produção...',
-    mediText: 'As estatinas são medicamentos utilizados principalmente para reduzir os níveis de colesterol no sangue. Elas atuam inibindo uma enzima chamada HMG-CoA redutase, que é responsável pela produção de colesterol no fígado.<br>As estatinas bloqueiam a ação da enzima HMG-CoA redutase, reduzindo a produção de colesterol no fígado. Isso faz com que o fígado absorva mais colesterol da corrente sanguínea, diminuindo os níveis de colesterol total no sangue e, especialmente, o colesterol LDL, conhecido como “colesterol ruim “.<br>As estatinas são geralmente prescritas para pessoas com alto colesterol ou risco de doença cardiovascular.<br>Embora as estatinas sejam geralmente seguras, elas podem não ser adequadas para pessoas com certas condições médicas, como doenças hepáticas ou renais graves. Além disso, as estatinas são contraindicadas durante a gravidez e a amamentação.',
-    indItem0: 'Alto colesterol',
-    indItem1: 'Aterosclerose',
-    indItem2: 'Diabetes',
-    nIndItem3: 'Durante a gravidez',
-    nIndItem4: 'Doenças hepáticas',
-    nIndItem5: 'Doenças renais',
-    where: {id: 10}
-})
+// const updateInformations = informations.update({
+//     title: 'Estatinas',
+//     image: 'https://i.im.ge/2023/11/30/CPuyUT.3-MB-Editors-Picks-24-02-2022-1-Statin-Pill-iStock-1221184048-removebg-preview.png',
+//     summary: 'As estatinas são medicamentos utilizados principalmente para reduzir os níveis de colesterol no sangue. Elas atuam inibindo uma enzima chamada HMG-CoA redutase, que é responsável pela produção...',
+//     mediText: 'As estatinas são medicamentos utilizados principalmente para reduzir os níveis de colesterol no sangue. Elas atuam inibindo uma enzima chamada HMG-CoA redutase, que é responsável pela produção de colesterol no fígado.<br>As estatinas bloqueiam a ação da enzima HMG-CoA redutase, reduzindo a produção de colesterol no fígado. Isso faz com que o fígado absorva mais colesterol da corrente sanguínea, diminuindo os níveis de colesterol total no sangue e, especialmente, o colesterol LDL, conhecido como “colesterol ruim “.<br>As estatinas são geralmente prescritas para pessoas com alto colesterol ou risco de doença cardiovascular.<br>Embora as estatinas sejam geralmente seguras, elas podem não ser adequadas para pessoas com certas condições médicas, como doenças hepáticas ou renais graves. Além disso, as estatinas são contraindicadas durante a gravidez e a amamentação.',
+//     indItem0: 'Alto colesterol',
+//     indItem1: 'Aterosclerose',
+//     indItem2: 'Diabetes',
+//     nIndItem3: 'Durante a gravidez',
+//     nIndItem4: 'Doenças hepáticas',
+//     nIndItem5: 'Doenças renais',
+//     where: {id: 10}
+// })
 
 
 module.exports = {sequelize, informations}
