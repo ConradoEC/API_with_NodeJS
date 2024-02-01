@@ -71,17 +71,33 @@ const informations = sequelize.define('informations2', {
 })
 
 const newInformations = informations.create({
-    title: 'Dipirona',
-    image: 'https://i.im.ge/2023/11/28/CSfrb1.154229-dipirona-500mg-30-comprimidos-generico-medley-p547850-z1-637558212986886456-removebg-preview.png',
-    summary: 'É um medicamento indicado como analgésico e antitérmico, utilizado no tratamento da dor e da febre. Oferece alívio de 30 a 60 minutos após a ingestão, com efeito sustentando por até 4 horas. Um...',
-    mediText: 'É um medicamento indicado como analgésico e antitérmico, utilizado no tratamento da dor e da febre. Oferece alívio de 30 a 60 minutos após a ingestão, com efeito sustentando por até 4 horas.<br>Um dos medicamentos mais populares do Brasil, a dipirona monoidratada também pode ser conhecida como metamizol. O primeiro ponto importante de se destacar sobre a dipirona é que esse é um medicamento isento de prescrição. Isso significa que, para comprá-la na farmácia, você não precisa de receita médica.<br>Se o efeito de uma única dose for insuficiente ou após o efeito analgésico ter diminuído, a dose pode ser repetida respeitando-se o modo de usar e a dose máxima diária, conforme prescrito pelo seu médico.',
-    indItem0: 'Resfriados',
-    indItem1: 'Dor muscular',
-    indItem2: 'Cólicas',
-    nIndItem3: 'Alérgicos',
-    nIndItem4: 'Gravidez',
-    nIndItem5: 'Hipotensos',
+    title: 'Paracetamol',
+    image: 'https://i.im.ge/2023/10/05/NJqjPm.image-removebg-preview-9.png',
+    summary: 'Paracetamol é um analgésico e antipirético, sendo indicado para a alívio da dor de intensidade leve a moderada.<br>Podemos encontrar esse medicamento para ser consumido em diversas formas, como por...',
+    mediText: 'Paracetamol é um analgésico e antipirético, sendo indicado para a alívio da dor de intensidade leve a moderada.<br>Podemos encontrar esse medicamento para ser consumido em diversas formas, como por exemplo, em gotas, comprimido efervescente, comprimido revestido, comprimido comestível e até em pó para ser preparado com a mistura de algum líquido. <br>O tempo de tratamento usando o medicamento indicado é até o desaparecimento dos sintomas da doença.<br>É importante consultar um médico especialista antes de ingerir o remédio, também é necessário não tomar doses exageradas e desnecessárias do produto e esperar o tempo de ação dos ativos. Assim, o risco de infecção pelo produto e possíveis efeitos colaterais são reduzidos.',
+    indItem0: 'Dor de garganta',
+    indItem1: 'Dor de dente',
+    indItem2: 'Febre alta',
+    nIndItem3: 'Doenças no fígado',
+    nIndItem4: 'Durante gravidez',
+    nIndItem5: 'Doenças sanguíneas',
 })
+// const newInformations = informations.create({
+//     title: '',
+//     image: '',
+//     summary: '',
+//     mediText: '',
+//     indItem0: '',
+//     indItem1: '',
+//     indItem2: '',
+//     nIndItem3: '',
+//     nIndItem4: '',
+//     nIndItem5: '',
+// })
+
+// const updateInformations = informations.update({
+//     id: 2
+// })
 
 
 module.exports = {sequelize, informations}
