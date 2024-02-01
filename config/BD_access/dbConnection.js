@@ -13,7 +13,7 @@ sequelize.authenticate().then(function()
     console.log("A conexão não foi estabelecida por causa do erro: " + error)
 })
 
-const informations = sequelize.define('informations', {
+const informations = sequelize.define('informations2', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
