@@ -197,7 +197,7 @@ const newInformations11 = informations.create({
     summary: 'A Ezetimiba é indicada para reduzir a quantidade de colesterol e de triglicérides no seu sangue.<br>A ezetimiba age ao reduzir a absorção do colesterol no intestino delgado, enquanto outros hipolipemiantes como as estatinas...',
     mediText: 'A Ezetimiba é indicada para reduzir a quantidade de colesterol e de triglicérides no seu sangue.<br>A ezetimiba age ao reduzir a absorção do colesterol no intestino delgado, enquanto outros hipolipemiantes como as estatinas e o fenofibrato diminuem o colesterol de maneira diferente; eles agem no fígado. Portanto, ezetimiba aumenta o efeito redutor do colesterol das vastatinas e do fenofibrato.',
     indItem0: 'Colesterol excessivo',
-    intem1: 'Triglicerídeos',
+    indItem1: 'Triglicerídeos',
     indItem2: 'Sitosterolemia',
     nIndItem3: 'Insuficiência hepática',
     nIndItem4: 'Alérgicos',
