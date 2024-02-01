@@ -13,7 +13,7 @@ sequelize.authenticate().then(function()
     console.log("A conexão não foi estabelecida por causa do erro: " + error)
 })
 
-const informations = sequelize.define('informations2', {
+const informations = sequelize.define('informations', {
     id: {
         type: Sequelize.INTEGER,
         autoIncrement: true,
@@ -60,7 +60,19 @@ const informations = sequelize.define('informations2', {
         type: Sequelize.STRING,
         allowNull: false
     },
+    createdAt: {
+        type: Sequelize.DATETIME,
+        allowNull: false
+    },
+    updatedAt: {
+        type: Sequelize.DATETIME,
+        allowNull: false
+    },
 })
+
+// const newInformations = informations.create({
+
+// })
 
 
 module.exports = {sequelize, informations}
@@ -84,15 +96,6 @@ module.exports = {sequelize, informations}
 
 
 
-// const Sequelize = require('sequelize')
-// const sequelize = new Sequelize('teste_sql_nodejs', 'root', '123321', {
-//     host: 'localhost',
-//     dialect: 'mysql'
-// })
-
-// const fields = sequelize.define('informations', {
-//     ID: Sequelize.INTEGER
-// });
 
 // module.exports = {
     // Sequelize: Sequelize,
