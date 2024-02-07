@@ -55,18 +55,27 @@ routes.get('/vaccine', (req, res) =>
 
 routes.post('/form', (req, res) =>
 {
-  const commentBody = req.body.body
   const commentId = req.body.id_do_comentário
+  const userId = req.body.id_do_usuario
   const userName = req.body.nome_do_usuario
   const userLastName = req.body.sobrenome_do_usuario
-  const userId = req.body.id_do_usuario
-  // res.send(req.body.body + req.body.id_do_comentário)
+  const commentBody = req.body.body
   const data = new Date()
   const day = String(data.getDate()).padStart(2,'0')
   const month = String(data.getMonth() + 1).padStart(2,'0')
   const year = data.getFullYear()
   const dataAtual = `${year}-${month}-${day}`
-  comments_connection.query(`INSERT INTO comments(comment_id, comment_name, comment_text, comment_date, id_user) VALUES (${commentId}, "${userName} ${userLastName}", ${JSON.stringify(commentBody)}, "${dataAtual}", ${userId})`)
+
+  const create_comment = sequelize_comments.create({
+    comment_id: `${commentId}`,
+    id_user: `${userId}`,
+    comment_name: `${userName} ${userLastName}`,
+    comment_text: `${commentBody}`,
+    comment_date: `${dataAtual}`
+  })
+
+
+//   comments_connection.query(`INSERT INTO comments(comment_id, comment_name, comment_text, comment_date, id_user) VALUES (${commentId}, "${userName} ${userLastName}", ${JSON.stringify(commentBody)}, "${dataAtual}", ${userId})`)
 })
 
 routes.post('/vaccine', (req, res) =>
