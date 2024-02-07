@@ -4,7 +4,7 @@ const sequelize_comments = new Sequelize('inter_2ds', 'grupo_a_2ds', 'site_de_me
     dialect: 'mysql'
 })
 
-sequelize_comments.authenticated().then(function(){
+sequelize_comments.authenticate().then(function(){
     console.log("Conexão bem estabelecida")
 }).catch(function(){
     console.log("A conexão não foi estabelecida por causa do erro: " + error)
