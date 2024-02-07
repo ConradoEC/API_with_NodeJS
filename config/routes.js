@@ -66,7 +66,7 @@ routes.post('/form', (req, res) =>
   const year = data.getFullYear()
   const dataAtual = `${year}-${month}-${day}`
 
-  const create_comment = sequelize_comments.create({
+  const create_comment = comments.create({
     comment_id: `${commentId}`,
     id_user: `${userId}`,
     comment_name: `${userName} ${userLastName}`,
