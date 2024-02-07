@@ -2,22 +2,22 @@ const express = require('express')
 const routes = express.Router()
 const mysql =  require('mysql2')
 // const connection = require('./BD_access/dbConnection.js')
-const comments_connection = require('./BD_access/comments.js')
+// const comments_connection = require('./BD_access/comments.js')
 const dbvaccine = require('./BD_access/dbvaccine.js')
 const {sequelize} = require('./BD_access/dbConnection.js')
 const {informations} = require('./BD_access/dbConnection.js')
+const {sequelize_comments} = require('./BD_access/comments.js')
+const {comments} = require('./BD_access/comments.js')
 
 
 routes.get('/bd', (req, res) =>
 {
     (async () => {
-
         await sequelize.sync();
 
-        const produtos = await informations.findAll();
-        res.send(produtos);
+        const Allproducts = await informations.findAll();
+        res.send(Allproducts);
     })()
-
     
     // connection.query('SELECT * FROM informations', (err, result) => 
     // {
@@ -32,10 +32,17 @@ routes.get('/form', (req, res) =>
 
 routes.get('/form/takeData', (req, res) =>
 {
-    comments_connection.query('SELECT * FROM comments', (err, result) => 
-    {
-        return res.json(result);
-    })
+    (async() => {
+        await sequelize_comments.sync();
+
+        const allComments = await comments.findAll();
+        res.send(allComments);
+    })()
+
+    // comments_connection.query('SELECT * FROM comments', (err, result) => 
+    // {
+    //     return res.json(result);
+    // })
 })
 
 routes.get('/vaccine', (req, res) =>
