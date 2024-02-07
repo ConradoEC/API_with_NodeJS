@@ -1,7 +1,7 @@
 const Sequelize = require('sequelize')
-const sequelize_comments = new Sequelize('', '', '', {
-    host: '',
-    dialect: ''
+const sequelize_comments = new Sequelize('inter_2ds', 'grupo_a_2ds', 'site_de_medicina', {
+    host: '85.10.205.173',
+    dialect: 'mysql'
 })
 
 sequelize_comments.authenticated().then(function(){
