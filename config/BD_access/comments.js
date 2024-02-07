@@ -10,7 +10,7 @@ sequelize_comments.authenticate().then(function(){
     console.log("A conexão não foi estabelecida por causa do erro: " + error)
 })
 
-const comments = sequelize_comments.define('', {
+const comments = sequelize_comments.define('comments', {
     id: {
         type: Sequelize.INTEGER,
         allowNull: false,
