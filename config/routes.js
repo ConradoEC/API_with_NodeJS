@@ -56,11 +56,6 @@ routes.get('/vaccine', (req, res) =>
 
         res.send(allVaccines)
     })()
-
-    // dbvaccine.query('SELECT * FROM vaccines', (err, result) =>
-    // {
-    //     return res.json(result);
-    // })
 })
 
 routes.post('/form', (req, res) =>
@@ -90,14 +85,19 @@ routes.post('/form', (req, res) =>
 
 routes.post('/vaccine', (req, res) =>
 {
-    // const urlParams = new URLSearchParams(window.location.search)
-    // const vaccine_id = urlParams.get('id')
     const vaccineId = req.body.vaccine_id
     const vaccine_date = req.body.vaccine_date
     const vaccine_newMax_dose = req.body.vaccine_newMax_dose
     const vaccine_reinforc = req.body.vaccine_reinforc
 
-    dbvaccine.query(`UPDATE vaccines SET date_vaccine = '${vaccine_date}', dose_vaccine = ${vaccine_newMax_dose}, counter_reinforc_vaccine = ${vaccine_reinforc} WHERE id_vaccine = ${vaccineId}`)
+    const updateVaccines = vaccines.update({
+        date_vaccine: `${vaccine_date}`,
+        dose_vaccine: `${vaccine_newMax_dose}`,
+        counter_reinforc_vaccine: `${vaccine_reinforc}`,
+        where: {id: vaccineId}
+    })
+
+    // dbvaccine.query(`UPDATE vaccines SET date_vaccine = '${vaccine_date}', dose_vaccine = ${vaccine_newMax_dose}, counter_reinforc_vaccine = ${vaccine_reinforc} WHERE id_vaccine = ${vaccineId}`)
 })
 
 
