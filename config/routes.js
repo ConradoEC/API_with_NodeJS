@@ -49,14 +49,13 @@ routes.get('/form/takeData', (req, res) =>
 routes.get('/vaccine', (req, res) =>
 {
 
-    (async() => 
-    {
+    (async() => {
         await sequelize_vaccines.sync()
 
         const allVaccines = await vaccines.findAll()
 
         res.send(allVaccines)
-    })
+    })()
 
     // dbvaccine.query('SELECT * FROM vaccines', (err, result) =>
     // {
