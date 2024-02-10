@@ -90,12 +90,11 @@ routes.post('/vaccine', (req, res) =>
     const vaccine_newMax_dose = req.body.vaccine_newMax_dose
     const vaccine_reinforc = req.body.vaccine_reinforc
 
-    const updateVaccines = vaccines.update({
+    vaccines.update({
         date_vaccine: `${vaccine_date}`,
         dose_vaccine: `${vaccine_newMax_dose}`,
         counter_reinforc_vaccine: `${vaccine_reinforc}`,
-        where: {id: vaccineId}
-    })
+    }, {where: {id: vaccineId}})
 
     // dbvaccine.query(`UPDATE vaccines SET date_vaccine = '${vaccine_date}', dose_vaccine = ${vaccine_newMax_dose}, counter_reinforc_vaccine = ${vaccine_reinforc} WHERE id_vaccine = ${vaccineId}`)
 })
