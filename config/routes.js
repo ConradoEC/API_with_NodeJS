@@ -3,12 +3,13 @@ const routes = express.Router()
 const mysql =  require('mysql2')
 // const connection = require('./BD_access/dbConnection.js')
 // const comments_connection = require('./BD_access/comments.js')
-const dbvaccine = require('./BD_access/dbvaccine.js')
+// const dbvaccine = require('./BD_access/dbvaccine.js')
 const {sequelize} = require('./BD_access/dbConnection.js')
 const {informations} = require('./BD_access/dbConnection.js')
 const {sequelize_comments} = require('./BD_access/comments.js')
 const {comments} = require('./BD_access/comments.js')
-
+const {sequelize_vaccines} = require('./BD_access/dbvaccine.js')
+const {vaccines} = require('./BD_access/dbvaccine.js')
 
 routes.get('/bd', (req, res) =>
 {
@@ -47,10 +48,20 @@ routes.get('/form/takeData', (req, res) =>
 
 routes.get('/vaccine', (req, res) =>
 {
-    dbvaccine.query('SELECT * FROM vaccines', (err, result) =>
+
+    (async() => 
     {
-        return res.json(result);
+        await sequelize_vaccines.sync()
+
+        const allVaccines = await vaccines.findAll()
+
+        res.send(allVaccines)
     })
+
+    // dbvaccine.query('SELECT * FROM vaccines', (err, result) =>
+    // {
+    //     return res.json(result);
+    // })
 })
 
 routes.post('/form', (req, res) =>
